@@ -34,6 +34,14 @@ const router = createRouter({
       meta: {
         index: 2
       }
+    },
+    {
+      path: '/category',
+      component: () => import('@/views/CategoryView.vue'),
+      name: 'category',
+      meta: {
+        index: 2
+      }
     }
   ]
 })
