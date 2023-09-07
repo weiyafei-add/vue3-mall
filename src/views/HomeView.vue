@@ -7,7 +7,7 @@
       <div class="header-search">
         <span class="app-name">商场商场</span>
         <i class="iconfont icon-search"></i>
-        <RouterLink to="./product-list?from">Hello 商场</RouterLink>
+        <RouterLink to="./product-list?from=home">Hello 商场</RouterLink>
       </div>
       <RouterLink class="login" tag="span" to="./login" v-if="!state.isLogin">
         登陆

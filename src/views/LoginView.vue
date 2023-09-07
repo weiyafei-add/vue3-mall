@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <SimpleHeader :name="state.type === 'login' ? '登录' : '注册'" :back="'/home'">
+        <SimpleHeader :name="state.type === 'login' ? '登录' : '注册'" :back="'/home'" @callback="callback">
         </SimpleHeader>
         <img class="logo" src="https://s.yezgea02.com/1604045825972/newbee-mall-vue3-app-logo.png" alt="">
         <div v-if="state.type === 'login'" class="login-body login">
@@ -123,6 +123,10 @@ const state = reactive<{type: type, [key: string]:  any}>({
 const toggle = (v: type) => {
     state.type = v;
     state.verify = ''
+}
+
+const callback = () => {
+  console.log('callback runing')
 }
 
 const onSubmit = async (value: Record<value, any>) => {
