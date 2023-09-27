@@ -8,8 +8,8 @@ export function modifyCart(params: any) {
   return axios.put('/shop-cart', params)
 }
 
-export function getCart() {
-  return axios.get('/shop-cart')
+export function getCart(params: any) {
+  return axios.get('/shop-cart', { params })
 }
 
 export function deleteCartItem(id: number) {
