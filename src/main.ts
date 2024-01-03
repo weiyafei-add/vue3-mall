@@ -97,4 +97,10 @@ app.config.globalProperties.$filters = {
   }
 }
 
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $filters: any
+  }
+}
+
 app.mount('#app')

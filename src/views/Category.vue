@@ -58,7 +58,7 @@ const searchWrap = ref<HTMLDivElement>()
 const state = reactive({
   categoryData: [],
   currentIndex: 15
-})
+} as any)
 
 const selectProduct = (product: any) => {
   router.push({
@@ -224,15 +224,5 @@ const goHome = () => {
       }
     }
   }
-}
-
-.fade-out-enter-active,
-.fade-out-leave-active {
-  // transition: opacity 0.5s;
-}
-
-.fade-out-enter,
-.fade-out-leave-to {
-  // opacity: 0;
 }
 </style>

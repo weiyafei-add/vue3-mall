@@ -20,7 +20,10 @@ const router = createRouter({
     {
       path: '/login',
       component: Login,
-      name: 'login'
+      name: 'login',
+      meta: {
+        index: 1
+      }
     },
     {
       path: '/product/:id',
@@ -29,7 +32,7 @@ const router = createRouter({
     },
     {
       path: '/product-list',
-      component: () => import('@/views/ProductListView.vue'),
+      component: () => import('@/views/ProductList.vue'),
       name: 'product-list',
       meta: {
         index: 2
@@ -37,16 +40,32 @@ const router = createRouter({
     },
     {
       path: '/category',
-      component: () => import('@/views/CategoryView.vue'),
+      component: () => import('@/views/Category.vue'),
       name: 'category',
       meta: {
-        index: 2
+        index: 1
       }
     },
     {
       path: '/cart',
-      component: () => import('@/views/CartView.vue'),
+      component: () => import('@/views/Cart.vue'),
       name: 'cart',
+      meta: {
+        index: 1
+      }
+    },
+    {
+      path: '/user',
+      component: () => import('@/views/User.vue'),
+      name: 'user',
+      meta: {
+        index: 1
+      }
+    },
+    {
+      path: '/about',
+      component: () => import('@/views/About.vue'),
+      name: 'about',
       meta: {
         index: 2
       }

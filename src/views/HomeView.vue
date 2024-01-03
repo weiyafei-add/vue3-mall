@@ -69,7 +69,7 @@ const state = reactive({
   isLogin: true,
   headerScroll: false,
   hots: [],
-  newGoodses: [],
+  newGoodses: [] as any,
   aaa: '111',
   recommends: [],
   loading: true,
@@ -351,5 +351,6 @@ const tips = () => {
       }
     }
   }
-}</style>
+}
+</style>
 
