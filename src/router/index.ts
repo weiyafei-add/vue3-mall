@@ -69,6 +69,22 @@ const router = createRouter({
       meta: {
         index: 2
       }
+    },
+    {
+      path: '/address',
+      component: () => import('@/views/Address.vue'),
+      name: 'address',
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/address-edit',
+      component: () => import('@/views/AddressEdit.vue'),
+      name: 'address-edit',
+      meta: {
+        index: 3
+      }
     }
   ]
 })
