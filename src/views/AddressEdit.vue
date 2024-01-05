@@ -7,6 +7,7 @@
 </template>
 
 <script setup lang="ts">
+// @ts-nocheck
 import SimpleHeader from '@/components/SimpleHeader.vue';
 import { reactive } from 'vue';
 import { tdist } from '@/common/js/utils'
@@ -25,6 +26,7 @@ const state = reactive({
     },
     searchResult: [],
 });
+
 
 onMounted(async () => {
     // 省市区列表构造

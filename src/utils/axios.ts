@@ -3,8 +3,6 @@ import { showToast, showFailToast } from 'vant'
 import { setLocal } from '@/common/js/utils'
 import router from '../router'
 
-console.log('import.meta.env', import.meta.env)
-
 axios.defaults.baseURL =
   import.meta.env.MODE == 'development'
     ? '//backend-api-01.newbee.ltd/api/v1'

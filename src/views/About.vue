@@ -31,6 +31,7 @@
 
 <script setup lang="ts">
 import SimpleHeader from '@/components/SimpleHeader.vue';
+
 </script>
 
 <style lang="less" scoped>

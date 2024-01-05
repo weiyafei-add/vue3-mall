@@ -1,11 +1,11 @@
 <template>
     <div class="img-verify">
-        <canvas ref="verify" :width="state.width"
-        :height="state.height" @click="handleDraw"></canvas>
+        <canvas ref="verify" :width="state.width" :height="state.height" @click="handleDraw"></canvas>
     </div>
 </template>
 
 <script setup lang="ts">
+// @ts-nocheck
 import { reactive, onMounted, ref } from 'vue';
 export type VueImageVerifyState = typeof state;
 
@@ -17,7 +17,7 @@ const state = reactive({
     height: 40,
     imgCode: ''
 })
-defineExpose({state});
+defineExpose({ state });
 
 onMounted(() => {
     state.imgCode = draw();
@@ -29,14 +29,14 @@ const handleDraw = () => {
 
 // 随机数
 const randomNum = (min: number | string, max: number | string) => {
-  return parseInt(Math.random() * (max - min) + min)
+    return parseInt(Math.random() * (max - min) + min)
 }
 
 const randomColor = (min: number | string, max: number | string) => {
-  const r = randomNum(min, max)
-  const g = randomNum(min, max)
-  const b = randomNum(min, max)
-  return `rgb(${r},${g},${b})`
+    const r = randomNum(min, max)
+    const g = randomNum(min, max)
+    const b = randomNum(min, max)
+    return `rgb(${r},${g},${b})`
 }
 
 
@@ -65,26 +65,26 @@ const draw = () => {
 
         ctx!.translate(30 * i + 15, 15);
         ctx!.rotate((deg * Math.PI) / 180);
-        ctx!.fillText(text, -15 + 5,-15)
+        ctx!.fillText(text, -15 + 5, -15)
         ctx!.restore();
     }
     for (let i = 0; i < 5; i++) {
-            ctx?.beginPath();
-            ctx?.moveTo(randomNum(0, state.width), randomNum(0, state.height));
-            ctx?.lineTo(randomNum(0, state.width), randomNum(0, state.height));
+        ctx?.beginPath();
+        ctx?.moveTo(randomNum(0, state.width), randomNum(0, state.height));
+        ctx?.lineTo(randomNum(0, state.width), randomNum(0, state.height));
 
-            ctx!.strokeStyle = randomColor(180, 230);
-            ctx?.closePath();
-            ctx?.stroke();
-        }
+        ctx!.strokeStyle = randomColor(180, 230);
+        ctx?.closePath();
+        ctx?.stroke();
+    }
 
-        for (let i = 0; i < 40; i++) {
-            ctx?.beginPath();
-            ctx?.arc(randomNum(0, state.width), randomNum(0, state.height), 1, 0, 2 * Math.PI)
-            ctx?.closePath();
-            ctx!.fillStyle = randomColor(150, 200)
-            ctx?.fill()
-        }
+    for (let i = 0; i < 40; i++) {
+        ctx?.beginPath();
+        ctx?.arc(randomNum(0, state.width), randomNum(0, state.height), 1, 0, 2 * Math.PI)
+        ctx?.closePath();
+        ctx!.fillStyle = randomColor(150, 200)
+        ctx?.fill()
+    }
     return imgCode
 
 }

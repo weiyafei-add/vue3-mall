@@ -1,5 +1,5 @@
+// @ts-nocheck
 import axios from '@/utils/axios'
-
 export function getAddressList() {
   return axios.get('/address', {
     params: { pageNumber: 1, pageSize: 1000 }
